@@ -1,13 +1,13 @@
 import 'fetch';
 
 import React from 'react';
-// import $ from 'jquery';
 import RepositoryList from './components/repository-list';
 
 import { reposForUser } from './api/repos';
 
 class HelloWorld extends React.Component {
   render() {
+    debugger;
     return (
       <div>
         <p>A List of Repositories!</p>
