@@ -1,0 +1,67 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^3.1.5",
+    "babel-runtime": "^5.2.6",
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "coffeeify": "^1.1.0",
+    "eslint": "^0.21.2",
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0",
+    "jasmine-core": "^2.3.0",
+    "karma-browserify": "^4.1.2",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-safari-launcher": "^0.1.1",
+    "karma-spec-reporter": "0.0.19",
+    "lodash": "^3.7.0",
+    "phantomjs": "^1.9.16",
+    "react": "^0.13.2",
+    "rx": "^2.5.2",
+    "uglify-js": "^2.4.20",
+    "watchify": "^3.2.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "optional": [
+            "runtime",
+            "es7.asyncFunctions"
+          ]
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "lint": "node_modules/.bin/eslint src/**/*.js",
+    "watch": "node_modules/.bin/watchify src/index.js --extension=.jsx -t babelify -o dist/bundle.js -v -d",
+    "build": "node_modules/.bin/browserify src/index.js --extension=.jsx -t babelify -o dist/bundle.js",
+    "uglify": "node_modules/.bin/uglifyjs dist/bundle.js -o dist/bundle.min.js -c -m",
+    "test": "node_modules/.bin/karma run"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "fetch": "npm:whatwg-fetch@^0.8.2",
+      "jquery": "github:components/jquery@^2.1.4",
+      "react": "npm:react@^0.14.0-alpha2",
+      "react-router": "npm:react-router@^0.13.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}
