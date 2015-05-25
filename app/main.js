@@ -1,19 +1,29 @@
 import 'fetch';
 
 import React from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
+import RepositoryList from './components/repository-list';
 
-console.log($.fn.jquery);
+import { reposForUser } from './api/repos';
 
 class HelloWorld extends React.Component {
   render() {
     return (
-      <p>Hello World!</p>
+      <div>
+        <p>A List of Repositories!</p>
+        <RepositoryList username="rhoffmann" />
+      </div>
     );
   }
 }
 
 React.render(<HelloWorld />, document.getElementById('app'));
+
+// reposForUser('rhoffmann').then(repos => console.log(repos));
+/*
+* JSPM Hint: you can not mix and match require (CJS) and import (ES6) statements in a file (is this true?)
+* same is true for module.exports={} and export {}
+*/
 
 // System.import('./app/modules/numbers').then(function(add, mult) {
 //   var v1 = add(1, 2, 3, 4, 555);
