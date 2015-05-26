@@ -3,4 +3,4 @@ function reposForUser (username) {
   return fetch(url).then(response => response.json());
 }
 
-export { reposForUser }
+export { reposForUser };

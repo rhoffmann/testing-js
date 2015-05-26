@@ -16,18 +16,13 @@
     "html-dist": "^0.1.0",
     "jasmine-core": "^2.3.0",
     "karma-browserify": "^4.1.2",
-    "karma-chrome-launcher": "^0.1.8",
-    "karma-firefox-launcher": "^0.1.4",
     "karma-jasmine": "^0.3.5",
-    "karma-phantomjs-launcher": "^0.1.4",
-    "karma-safari-launcher": "^0.1.1",
     "karma-spec-reporter": "0.0.19",
     "lodash": "^3.7.0",
     "phantomjs": "^1.9.16",
     "react": "^0.13.2",
     "rx": "^2.5.2",
     "uglify-js": "^2.4.20",
-    "uglifyjs": "^2.4.10",
     "watchify": "^3.2.0"
   },
   "browserify": {
@@ -44,10 +39,10 @@
     ]
   },
   "scripts": {
-    "lint": "node_modules/.bin/eslint src/**/*.js",
-    "watch": "node_modules/.bin/watchify src/index.js --extension=.jsx -t babelify -o dist/bundle.js -v -d",
-    "build": "node_modules/.bin/browserify src/index.js --extension=.jsx -t babelify -o dist/bundle.js",
-    "jspm-bundle": "make build",
+    "jspm-bundle": "make clean && make build",
+    "lint": "node_modules/.bin/eslint app/**/*.js",
+    "watch": "node_modules/.bin/watchify app/main.js --extension=.jsx -t babelify -o dist/bundle.js -v -d",
+    "build": "make clean && node_modules/.bin/browserify app/main.js --extension=.jsx -t babelify -o dist/bundle.js",
     "uglify": "node_modules/.bin/uglifyjs dist/bundle.js -o dist/bundle.min.js -c -m",
     "test": "node_modules/.bin/karma run"
   },

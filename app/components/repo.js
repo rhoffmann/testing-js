@@ -7,6 +7,6 @@ export default class Repo extends React.Component {
         <h3>{this.props.raw.name}</h3>
         <p>{this.props.raw.description}</p>
       </div>
-    )
+    );
   }
 }
