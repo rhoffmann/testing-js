@@ -10,9 +10,7 @@ function Bar(who) {
   Foo.call(this, who);
 }
 
-// console.dir(Bar);
-// console.dir(Bar.prototype);
-// console.dir(Bar.__proto__);
+// prototypal inheritance
 
 Bar.prototype = Object.create(Foo.prototype);
 Bar.prototype.constructor = Bar; // Fix constructor
@@ -23,10 +21,6 @@ Bar.prototype.speak = function() {
 
 var b1 = new Bar('b1');
 var b2 = new Bar('b2');
-
-// console.dir(b1);
-// console.dir(b2);
-// console.log(b1.__proto__.__proto__);
 
 b1.speak();
 b2.speak();

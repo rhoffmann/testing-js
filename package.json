@@ -39,7 +39,6 @@
     ]
   },
   "scripts": {
-    "jspm-bundle": "make clean && make build",
     "lint": "node_modules/.bin/eslint app/**/*.js",
     "watch": "node_modules/.bin/watchify app/main.js --extension=.jsx -t babelify -o dist/bundle.js -v -d",
     "build": "make clean && node_modules/.bin/browserify app/main.js --extension=.jsx -t babelify -o dist/bundle.js",
